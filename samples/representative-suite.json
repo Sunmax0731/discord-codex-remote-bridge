@@ -1,0 +1,120 @@
+{
+  "product": "discord-codex-remote-bridge",
+  "title": "Discord Codexリモートブリッジ",
+  "benchmarkRepos": [
+    "Sunmax0731/movie-telop-transcriber",
+    "Sunmax0731/codex-remote-android"
+  ],
+  "requiredFields": [
+    "channelId",
+    "command",
+    "authMode",
+    "dryRun"
+  ],
+  "scenarios": [
+    {
+      "id": "happy-path",
+      "purpose": "Discord経由の指示、認証モード、dry-run境界の正常入力を確認する",
+      "input": {
+        "items": [
+          {
+            "id": "discord-codex-remote-bridge-happy",
+            "title": "Discord Codexリモートブリッジ happy",
+            "channelId": "discord-channel-id",
+            "command": "codex run --dry-run",
+            "authMode": "local-token",
+            "dryRun": true,
+            "status": "ready"
+          }
+        ]
+      },
+      "expected": {
+        "result": "passed",
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "id": "missing-required",
+      "purpose": "必須項目不足をerrorとして検出する",
+      "input": {
+        "items": [
+          {
+            "id": "discord-codex-remote-bridge-missing-required",
+            "title": "Discord Codexリモートブリッジ missing-required",
+            "command": "codex run --dry-run",
+            "authMode": "local-token",
+            "dryRun": true,
+            "status": "ready"
+          }
+        ]
+      },
+      "expected": {
+        "result": "failed",
+        "errors": 1,
+        "warnings": 0
+      }
+    },
+    {
+      "id": "blocked-status",
+      "purpose": "blocked状態をwarningとして検出する",
+      "input": {
+        "items": [
+          {
+            "id": "discord-codex-remote-bridge-blocked",
+            "title": "Discord Codexリモートブリッジ blocked",
+            "channelId": "discord-channel-id",
+            "command": "codex run --dry-run",
+            "authMode": "local-token",
+            "dryRun": true,
+            "status": "blocked"
+          }
+        ]
+      },
+      "expected": {
+        "result": "warning",
+        "errors": 0,
+        "warnings": 1
+      }
+    },
+    {
+      "id": "mixed-batch",
+      "purpose": "正常、必須不足、警告を同一バッチで集計する",
+      "input": {
+        "items": [
+          {
+            "id": "discord-codex-remote-bridge-happy",
+            "title": "Discord Codexリモートブリッジ happy",
+            "channelId": "discord-channel-id",
+            "command": "codex run --dry-run",
+            "authMode": "local-token",
+            "dryRun": true,
+            "status": "ready"
+          },
+          {
+            "id": "discord-codex-remote-bridge-missing-required",
+            "title": "Discord Codexリモートブリッジ missing-required",
+            "command": "codex run --dry-run",
+            "authMode": "local-token",
+            "dryRun": true,
+            "status": "ready"
+          },
+          {
+            "id": "discord-codex-remote-bridge-blocked",
+            "title": "Discord Codexリモートブリッジ blocked",
+            "channelId": "discord-channel-id",
+            "command": "codex run --dry-run",
+            "authMode": "local-token",
+            "dryRun": true,
+            "status": "blocked"
+          }
+        ]
+      },
+      "expected": {
+        "result": "failed",
+        "errors": 1,
+        "warnings": 1
+      }
+    }
+  ]
+}
