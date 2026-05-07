@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "type": "module",
-  "description": "Discord経由のCodex作業指示を安全に整理し、dry-run前提で確認する。",
+  "description": "Discord経由のCodex指示をdry-runで整理し、認証モードと実行前確認を記録する。",
   "scripts": {
     "test": "node --test tests/*.test.mjs && node tools/qcds-evaluate.mjs",
     "validate": "npm test",
@@ -12,7 +12,9 @@
   "keywords": [
     "windowsapp",
     "discord-bridge",
-    "mvp"
+    "mvp",
+    "qcds",
+    "pre-release"
   ],
   "license": "MIT"
 }

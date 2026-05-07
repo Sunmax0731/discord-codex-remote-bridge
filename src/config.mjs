@@ -1,7 +1,7 @@
 export const productConfig = {
   "repo": "discord-codex-remote-bridge",
-  "titleJa": "Discord・Codexリモート開発ブリッジ",
-  "summary": "Discord経由の安全なCodex指示整理",
+  "titleJa": "Discord Codexリモートブリッジ",
+  "summary": "Discord経由のCodex指示をdry-runで整理し、認証モードと実行前確認を記録する。",
   "requiredFields": [
     "channelId",
     "command",

@@ -4,8 +4,9 @@ import { analyzeItems, renderMarkdownReport } from '../src/core.mjs';
 
 test('valid sample passes required field checks', () => {
   const report = analyzeItems({ items: [{
-  "id": "discord-bridge-1",
-  "title": "Discord・Codexリモート開発ブリッジ サンプル 1",
+  "id": "discord-codex-remote-bridge-1",
+  "title": "Discord Codexリモートブリッジ サンプル1",
+  "status": "ready",
   "channelId": "discord-channel-id",
   "command": "codex run --dry-run",
   "authMode": "local-token",
@@ -17,8 +18,9 @@ test('valid sample passes required field checks', () => {
 
 test('missing required field is reported', () => {
   const report = analyzeItems({ items: [{
-  "id": "discord-bridge-missing-required",
+  "id": "discord-codex-remote-bridge-missing-required",
   "title": "必須項目不足サンプル",
+  "status": "ready",
   "command": "codex run --dry-run",
   "authMode": "local-token",
   "dryRun": true

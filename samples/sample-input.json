@@ -2,7 +2,7 @@
   "items": [
     {
       "id": "discord-codex-remote-bridge-1",
-      "title": "Discord・Codexリモート開発ブリッジ サンプル 1",
+      "title": "Discord Codexリモートブリッジ サンプル1",
       "status": "ready",
       "channelId": "discord-channel-id",
       "command": "codex run --dry-run",
