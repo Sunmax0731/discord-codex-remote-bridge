@@ -2,31 +2,59 @@
   "product": "discord-codex-remote-bridge",
   "repository": "Sunmax0731/discord-codex-remote-bridge",
   "githubUrl": "https://github.com/Sunmax0731/discord-codex-remote-bridge",
-  "tag": "v0.1.0-alpha.1",
   "releaseUrl": "https://github.com/Sunmax0731/discord-codex-remote-bridge/releases/tag/v0.1.0-alpha.1",
+  "tag": "v0.1.0-alpha.1",
   "prerelease": true,
   "latest": false,
+  "latestCheck": {
+    "endpoint": "not-found-or-no-stable-release",
+    "latestTag": null,
+    "latestIsThisPrerelease": false
+  },
   "assetCount": 3,
-  "assets": [
-    "discord-codex-remote-bridge-docs.zip",
-    "manual-test.md",
-    "strict-manual-test-addendum.md"
-  ],
-  "platformRuntimeGate": "dist/platform-runtime-gate-result.json",
-  "platformType": "windows-local-app",
-  "manualTest": "not-run-by-codex",
+  "assets": {
+    "required": [
+      "dist/discord-codex-remote-bridge-docs.zip",
+      "docs/manual-test.md",
+      "docs/strict-manual-test-addendum.md"
+    ],
+    "actualNames": [
+      "discord-codex-remote-bridge-docs.zip",
+      "manual-test.md",
+      "strict-manual-test-addendum.md"
+    ],
+    "actualCount": 3,
+    "allRequiredPresent": true
+  },
   "qcdsEvaluation": {
     "Quality": "S-",
     "Cost": "S-",
     "Delivery": "S-",
-    "Satisfaction": "S-",
-    "capReason": "manual-test-not-run-by-codex"
+    "Satisfaction": "S-"
   },
-  "github": {
-    "repo": "Sunmax0731/discord-codex-remote-bridge",
-    "url": "https://github.com/Sunmax0731/discord-codex-remote-bridge",
-    "releaseUrl": "https://github.com/Sunmax0731/discord-codex-remote-bridge/releases/tag/v0.1.0-alpha.1",
-    "prerelease": true,
-    "latest": false
+  "platformRuntimeGate": {
+    "product": "discord-codex-remote-bridge",
+    "platformType": "windows-local-app",
+    "pass": true,
+    "method": "runtime-gate",
+    "manualTest": "not-run-by-codex",
+    "packageTest": true
+  },
+  "automatedTests": [
+    {
+      "command": "npm test",
+      "result": "passed"
+    }
+  ],
+  "manualTest": "not-run-by-codex",
+  "git": {
+    "ahead": 0,
+    "behind": 0,
+    "status": "",
+    "localCodex": [
+      "codex/closed-alpha-release"
+    ],
+    "remoteCodex": [],
+    "clean": false
   }
 }
