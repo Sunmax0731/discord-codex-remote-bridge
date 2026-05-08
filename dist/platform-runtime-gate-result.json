@@ -1,0 +1,8 @@
+{
+  "product": "discord-codex-remote-bridge",
+  "platformType": "windows-local-app",
+  "pass": true,
+  "method": "runtime-gate",
+  "manualTest": "not-run-by-codex",
+  "packageTest": true
+}

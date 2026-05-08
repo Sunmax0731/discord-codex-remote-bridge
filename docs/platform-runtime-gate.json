@@ -1,0 +1,11 @@
+{
+  "product": "discord-codex-remote-bridge",
+  "title": "Discord・Codexリモート開発ブリッジ",
+  "domain": "WindowsApp",
+  "ideaNo": 21,
+  "platformType": "windows-local-app",
+  "expectedPublicTarget": "GitHub Release",
+  "browser": null,
+  "android": null,
+  "evidence": "dist/platform-runtime-gate-result.json"
+}
